@@ -100,7 +100,7 @@ function say(text, type) { const m = $("msg"); m.textContent = text; m.className
 
 async function load() {
   try {
-    const r = await fetch(API_URL);
+    const r = await fetch(API_URL + "?t=" + Date.now());
     data = await r.json();
   } catch (e) {
     say("Gagal memuat data slot. Muat ulang halaman atau hubungi admin.", "err");
